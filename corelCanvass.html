@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Corel draw</title>
+	<link rel="stylesheet" type="text/css" href="corelCanvass.css">
+
+</head>
+<body>
+
+<canvas id="myCanvas" width="700px" height="500px" onmousedown="down()" onmouseup="up()" onmousemove="position()"  onclick="cirl()" onclick="draw()" onclick="rect()" onclick="square()" onclick="halfcirl()" ></canvas>
+
+<input type="text" id="mp" name="">
+<div id="shapes">
+<input type="button" value="drawline" onclick="draw()"  name="">
+<input type="button" value="circle" onclick="cirl()" name="">
+<input type="button" value="Rectangle" onclick="rect()" name="">
+<input type="button" value="Square" onclick="square()" name="">
+<br><input type="button" value="Arc" onclick="halfcirl()" name="">
+</div>
+<script type="text/javascript">
+	
+		// var ux = 0;
+		// var uy = 0;
+		// var dx = 0;
+		// var dy = 0;
+
+		// 	function position() {
+
+		// 		mp.value =  "X" + (event.x-310) + "||" + "Y" + (event.y-10 );
+		// 		// body...
+		// 	}
+
+		// 	function draw() {
+				
+		// 		var pencil = document.getElementById('mycanvas');(
+		// 						var pencil = mycanvas.getContext('2d');
+		// 						pencil.moveTo(dx,dy);
+		// 						pencil.lineTo(ux,uy);
+		// 						pencil.stroke();
+				
+				
+		// 					}
+				
+		// 						function down() {
+							
+				
+				
+							
+		// 					dx = event.x-310;
+		// 					dy= event.y-10;
+		// 					// body...
+		// 				}
+				
+				
+		// 				function up() {
+				
+		// 					uy = event.y-10;
+		// 					ux = event.x-310;
+				
+		// 					draw();
+		// 					// body...
+		// 				}
+				
+							// function cirl() {
+								 
+							// 	 var crl = document.getElementById('mycanvas');
+							// 	 var crl = mycanvas.getContext)
+
+
+						// function cirl() {
+						// 	// body...
+	
+						// 	var c = document.getElementById("myCanvas");
+						// 	var ctx = c.getContext("2d");
+						// 	ctx.beginPath();
+						// 	ctx.arc(300, 200, 30, 0, Math.PI,true);
+						// 	ctx.stroke();
+
+
+						// 	cirl()
+
+						// }
+
+
+
+
+
+
+
+
+
+
+						
+							var canvas = document.getElementById('myCanvas')
+							var dx = 0;
+							var dy = 0;
+							var	ux = 0;
+							var uy = 0;
+							var r = 0;
+						
+
+								pencil = canvas.getContext('2d')
+
+												function position() {
+
+								mp.value =  "X" + (event.x-310) + "||" + "Y" + (event.y-10 );
+				
+								}
+
+
+								function draw() {
+
+										canvas.onmousedown = function ab() {
+
+											dx = event.x-310;
+											dy = event.y-10;
+
+											pencil.moveTo(dx,dy)
+											// body...
+										}
+
+											canvas.onmouseup = function ba() {
+
+												ux = event.x-310;
+												uy = event.y-10;
+												pencil.lineTo(ux,uy)
+												pencil.stroke()
+
+												
+												// body...
+											}
+									// body...
+								}
+					
+							// body...
+
+
+
+							function cirl() {
+								// body...
+
+							 canvas.onmousedown = function down() {
+							 	dy = event.y-10;
+							 	dx = event.x-310;
+
+							 	pencil.moveTo(dx,dy)
+							 	// body...
+							 }
+
+							 canvas.onmouseup = function up() {
+
+							 	uy= event.y-10;
+							 	ux = event.x-310;
+							 	pencil.beginPath();
+
+							 if (ux>dx) {
+
+							 	r = ux-dx;
+
+							 }
+
+
+							pencil.arc(dx,dy,r,0,2*Math.PI);
+							pencil.stroke();
+
+						}
+
+
+					}
+
+
+					function halfcirl() {
+								// body...
+
+							 canvas.onmousedown = function hcirl() {
+							 	dy = event.y-10;
+							 	dx = event.x-310;
+
+							 	pencil.moveTo(dx,dy)
+							 	// body...
+							 }
+
+							 canvas.onmouseup = function hcirld() {
+
+							 	uy= event.y-10;
+							 	ux = event.x-310;
+							 	pencil.beginPath();
+
+							 if (ux>dx) {
+
+							 	r = ux-dx;
+
+							 }
+
+
+							pencil.arc(dx,dy,r,dx,Math.PI);
+							pencil.stroke();
+
+						}
+
+
+					}
+
+
+					function square() {
+						// body...
+					
+						canvas.onmousedown = function sqr() {
+
+							dx = event.x-310;
+							dy = event.y-10;
+
+							pencil.moveTo(dx,dy)
+							// body...
+						}
+
+						canvas.onmouseup = function sqrd() {
+
+							ux = event.x-310;
+							uy = event.y-10;
+							pencil.rect(dx,dy,ux-dx, ux-dx)
+							pencil.stroke()
+
+							// body...
+						}
+
+					}
+
+
+
+
+					function rect() {
+						// body...
+					
+						canvas.onmousedown = function rct() {
+
+							dx = event.x-310;
+							dy = event.y-10;
+
+							pencil.moveTo(dx,dy)
+							// body...
+						}
+
+						canvas.onmouseup = function rctd() {
+
+							ux = event.x-310;
+							uy = event.y-10;
+							pencil.rect(dx,dy,ux-dx, uy-dy)
+							pencil.stroke()
+
+							// body...
+						}
+
+					}
+</script>
+
+</body>
+</html>
